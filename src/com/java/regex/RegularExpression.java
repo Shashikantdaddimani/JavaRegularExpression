@@ -74,6 +74,13 @@ public class RegularExpression {
 		System.out.println("Enter Password: ");
 		String password3 = input.next();
 		System.out.println(isValied(passwordPattern3,password3));
+		/*
+		 * Regular Expression for validate the Pre-Defined password  at Atleast 1 Special character.
+		 */	
+		String passwordPattern4 ="((?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%*]).{8,})";
+		System.out.println("Enter Password: ");
+		String password4 = input.next();
+		System.out.println(isValied(passwordPattern4,password4));
 
 	}
 
