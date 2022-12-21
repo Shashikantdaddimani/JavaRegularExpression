@@ -31,20 +31,14 @@ public class RegularExpression {
 		String firstNamePattern = "^[A-Z]{1}[a-z]{2,}$";
 		System.out.println("Enter the FirstName");
 		String firstName = input.next();
+		System.out.println(isValied(firstNamePattern, firstName));
 		/*
 		 * Regular Expression for validate the LastName
 		 */
 		String lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
 		System.out.println("Enter the LastName");
 		String lastName = input.next();
-		/*
-		 * Regular Expression for validate the  EmailId
-		 */
-		String emailIdPattern = "^[a-z]+[.][a-zA-Z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-zA-Z]{2,3})*$";
-		System.out.println("Enter the EmeilId");
-		String emailId =input.next();
-
-		System.out.println(isValied(firstNamePattern, firstName));
+		System.out.println(isValied(lastNamePattern, lastName));
 
 	}
 
