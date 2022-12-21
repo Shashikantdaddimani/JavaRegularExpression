@@ -46,6 +46,13 @@ public class RegularExpression {
 		System.out.println("Enter the EmeilId");
 		String emailId =input.next();
 		System.out.println(isValied(emailIdPattern, emailId));
+		/*
+		 * Regular Expression for Validate the MobileNumber
+		 */
+	    String mobileNumberPattern = "^(91)[ ]{1}[6-9]{1}[0-9]{9}$";
+	    System.out.println("91 9113274303");
+		String mobileNumber = "91 9113274303";
+		System.out.println(isValied(mobileNumberPattern,mobileNumber));
 		
 		
 
