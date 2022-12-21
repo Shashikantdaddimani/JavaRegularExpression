@@ -39,6 +39,17 @@ public class RegularExpression {
 		System.out.println("Enter the LastName");
 		String lastName = input.next();
 		System.out.println(isValied(lastNamePattern, lastName));
+		/*
+		 * Regular Expression for validate the  EmailId
+		 */
+		String emailIdPattern = "^[a-z]+[.][a-zA-Z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-zA-Z]{2,3})*$";
+		System.out.println("Enter the EmeilId");
+		String emailId =input.next();
+		System.out.println(isValied(emailIdPattern, emailId));
+		
+		
+
+		
 
 	}
 
