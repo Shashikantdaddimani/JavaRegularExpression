@@ -53,7 +53,13 @@ public class RegularExpression {
 	    System.out.println("91 9113274303");
 		String mobileNumber = "91 9113274303";
 		System.out.println(isValied(mobileNumberPattern,mobileNumber));
-		
+		/*
+		 * Regular Expression for validate the Pre-Defined password  at minimum 8 charcters
+		 */
+		String passwordPattern = "^[a-zA-Z0-9]{8,}$";
+		System.out.println("Enter Password: ");
+		String password = input.next();
+		System.out.println(isValied(passwordPattern,password));
 		
 
 		
