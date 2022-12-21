@@ -56,12 +56,17 @@ public class RegularExpression {
 		/*
 		 * Regular Expression for validate the Pre-Defined password  at minimum 8 charcters
 		 */
-		String passwordPattern = "^[a-zA-Z0-9]{8,}$";
+		String passwordPattern1 = "^[a-zA-Z0-9]{8,}$";
 		System.out.println("Enter Password: ");
 		String password = input.next();
-		System.out.println(isValied(passwordPattern,password));
-		
-
+		System.out.println(isValied(passwordPattern1,password));
+		/*
+		 * Regular Expression for validate the Pre-Defined password  at atleast 1 Upper Case
+		 */
+		String passwordPattern2 = "((?=.*[A-Z]).{8,})*";
+		System.out.println("Enter Password: ");
+		String password2 = input.next();
+		System.out.println(isValied(passwordPattern2,password2));
 		
 
 	}
