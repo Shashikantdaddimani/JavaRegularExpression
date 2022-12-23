@@ -81,7 +81,14 @@ public class RegularExpression {
 		System.out.println("Enter Password: ");
 		String password4 = input.next();
 		System.out.println(isValied(passwordPattern4,password4));
-
+		/*
+		 * Regular Expression for validate the all email sample
+		 */
+		String emailSamplePattern= "^[a-z]{3,}+[-.+]{0,1}+[10]{0,3}+[@]{1}+[10]{0,3}+[a-z]{0,}+[.]{0,1}+[a-z]{0,3}+[,.]{0,1}+[a-z]{0,3}$";
+		System.out.println("Enter Password: ");
+		String emailSample = input.next();
+		System.out.println(isValied(emailSamplePattern,emailSample));
+		
 	}
 
 }
