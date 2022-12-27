@@ -7,84 +7,65 @@ public class UserRegistration {
 	/*
 	 * Regular expresion patterns
 	 */
-	    static Pattern firstName = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
-	    static Pattern lastName = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
-	    static Pattern email = Pattern.compile("^[a-z]+[.][a-zA-Z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-zA-Z]{2,3})*$");
-	    static Pattern mobileNumber = Pattern.compile("^(91)[ ]{1}[6-9]{1}[0-9]{9}$");
-	    static Pattern password = Pattern.compile("^((?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%*]).{8,})$");
-	   
-	    
-	    public static boolean firstName() throws myCustomException {
-	        Matcher firstNameTest = firstName.matcher("SHashikant");
+	private static final String firstNAME = "^[A-Z]{1}[a-z]{2,}$";
+	private static final String lastNAME = "^[A-Z]{1}[a-z]{2,}$";
+	private static final String EMAIL = "^[a-z]+[.][a-zA-Z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-zA-Z]{2,3})*$";
+	private static final String PHONE_NUMBER = "^(91)[ ]{1}[6-9]{1}[0-9]{9}$";
+	private static final String PASSWORD = "((?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%*]).{8,})";
 
-	        if (firstNameTest.matches() == true)
-	            return true;
-	        else
-	            throw new myCustomException(" first name is invalied");
-	    }
+	public UserRegistrationInterface firstNameValidate = new UserRegistrationInterface() {
+		public boolean userEntries(String firstname) throws myCustomException {
+			boolean result = Pattern.matches(firstNAME, firstname);
+			if (result) {
+				return result;
+			} else {
+				throw new myCustomException(myCustomException.ExceptionType.INVALID_FIRST_NAME, "Invalid Firsrt Name");
+			}
+		}
+	};
 
-	    public static boolean lastName() throws myCustomException {
-	        Matcher lastNameTest = lastName.matcher("DAddimani");
-	        if (lastNameTest.matches() == true)
-	            return true;
-	        else
-	            throw new myCustomException(" last name is inValied");
-	    }
+	public UserRegistrationInterface lastNameValidate = new UserRegistrationInterface() {
+		public boolean userEntries(String lastName) throws myCustomException {
+			boolean result = Pattern.matches(lastNAME, lastName);
+			if (result) {
+				return result;
+			} else {
+				throw new myCustomException(myCustomException.ExceptionType.INVALID_LAST_NAME, "Invalid Last Name");
+			}
+		}
+	};
 
-	    public static boolean email() throws myCustomException {
-	        
-	        Matcher emailTest = email.matcher("100abc.xy@gamil.com");
-	        if (emailTest.matches() == true)
-	            return true;
-	        else
-	            throw new myCustomException(" emailId is Invalied");
-	    }
+	public UserRegistrationInterface emailValidate = new UserRegistrationInterface() {
+		public boolean userEntries(String email) throws myCustomException {
+			boolean result = Pattern.matches(EMAIL, email);
+			if (result) {
+				return result;
+			} else {
+				throw new myCustomException(myCustomException.ExceptionType.INVALID_EMAIL, "Invalid Email");
+			}
+		}
+	};
 
-	    public static boolean mobileNumber() throws myCustomException {
-	        Matcher mobileNumberTest = mobileNumber.matcher("91 5698742315");
-	        if (mobileNumberTest.matches() == true)
-	            return true;
-	        else
-	            throw new myCustomException(" mobileNumber is inValied");
-	    }
+	public UserRegistrationInterface phoneNumberValidate = new UserRegistrationInterface() {
+		public boolean userEntries(String phonenumber) throws myCustomException {
+			boolean result = Pattern.matches(PHONE_NUMBER, phonenumber);
+			if (result) {
+				return result;
+			} else {
+				throw new myCustomException(myCustomException.ExceptionType.INVALID_PHONE_NUMBER,
+						"Invalid Phone Number");
+			}
+		}
+	};
 
-	    public static boolean password() throws myCustomException {
-	        Matcher passwordTest = password.matcher("12abc@$");
-	        if (passwordTest.matches() == true)
-	            return true;
-	        else
-	            throw new myCustomException(" Password is Invalid");
-	    }
-	    
-
-	    public static void main(String[] args) throws myCustomException {
-	        try {
-	            UserRegistration.firstName();
-	        } catch (myCustomException firstName) {
-	            System.out.println("Exception - " + firstName);
-	        }
-	        try {
-	            UserRegistration.lastName();
-
-	        } catch (myCustomException lastName) {
-	            System.out.println("Exception - " + lastName);
-	        }
-	        try {
-	            UserRegistration.email();
-	        } catch (myCustomException emaild) {
-	            System.out.println("Exception - " + emaild);
-	        }
-	        try {
-	            UserRegistration.mobileNumber();
-	        } catch (myCustomException mobileNumBer) {
-	            System.out.println("Exception - " + mobileNumBer);
-	        }
-	        try {
-	            UserRegistration.password();
-	        } catch (myCustomException password) {
-	            System.out.println("Exception - " + password);
-	        }
-
-	    }
-	  
+	public UserRegistrationInterface passwordValidate = new UserRegistrationInterface() {
+		public boolean userEntries(String password) throws myCustomException {
+			boolean result = Pattern.matches(PASSWORD, password);
+			if (result) {
+				return result;
+			} else {
+				throw new myCustomException(myCustomException.ExceptionType.INVALID_PASSWORD, "Invalid Password");
+			}
+		}
+	};
 }
